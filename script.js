@@ -236,7 +236,8 @@ function validateForm() {
     if (isValid) return true;
 
     // Else ask user if they want to proceed anyway
-    return confirm("Please correct the highlighted errors in the form before downloading your resume.");
+    else alert("Please correct the highlighted errors in the form before downloading your resume.");
+    return false;
 }
 
 
@@ -245,8 +246,7 @@ document.getElementById("downloadBtn").addEventListener("click", () => {
     if (!validateForm()) return;
 
 // --- PDF Download Button ---
-
-    const content = document.querySelector('#resume-sections');
+const content = document.querySelector('#resume-sections');
     const options = {
         margin: 0.5,
         filename: 'resume.pdf',
